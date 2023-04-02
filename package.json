@@ -1,5 +1,5 @@
 {
-  "name": "JMM-PORTAL",
+  "name": "jmm-portal-application",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
