@@ -39,15 +39,14 @@ const Login = () => {
         console.log('response', resp);
         if (resp && resp.data && resp.data.token) {
           localStorage.setItem('_loginToken', JSON.stringify({ jwtToken: resp.data.token }));
-          setNotificaion(true);
           history.push(ROUTES.EMPLOYEE);
         } else {
-          console.log('Error occure', resp);
+          console.log('Error occured', resp);
         }
       } catch (error) {
+        setNotificaion(true);
         console.log('something want wrong in the login API', error);
       } finally {
-        setNotificaion(true);
         setLoading(false);
       }
     }
@@ -56,7 +55,7 @@ const Login = () => {
     <Spinner style={{ position: 'absolute' }} />
   ) : (
     <>
-      {notification && <NotificationTicket msg={{ text: 'User Login Sucessfully', type: 'success' }} />}
+      {notification && <NotificationTicket msg={{ text: 'Email or Password Incorrect', type: 'error' }} />}
       <div className='login-form-container'>
         <form
           onSubmit={(e) => {
