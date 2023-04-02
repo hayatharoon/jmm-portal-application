@@ -2,12 +2,17 @@
 
 This is an internal system portal that allows users to search employees of the company. The portal is secure, and users need to enter their email and password to access it.
 
+GiHub Link: https://github.com/hayatharoon/jmm-portal-application.git
+Live Link: https://jmm-portal-application.netlify.app
+Video Link: https://www.loom.com/share/f31b8dae2be5490aaf1bc1add758d0ff
+
 ## **Installation:**
 
 To install and run the application, follow these steps:
 
 1. Clone this repository using git clone https://github.com/hayatharoon/jmm-portal-application.git
 2. Install the dependencies by running npm install or yarn.
+3. Then `npm start`
 
 ## **Features**
 
