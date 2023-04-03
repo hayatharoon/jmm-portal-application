@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import { getAllEmpolyees } from '../../../services/employee.services';
 import CustomTable from '../../atoms/CustomTable/CustomTable';
 import Modal from '../../atoms/Modal/Modal';
@@ -17,8 +17,8 @@ const Employee = () => {
   //Pagination
   const [activePage, setActivePage] = useState(1);
   const itemPerPage = 15;
-  const totalPages = 2000;
   const [currentItems, setCurrentItems] = useState([]);
+  const [totalRecord, setTotalRecord] = useState('');
 
   const defaultColumns = [
     { key: 'id', text: '#', value: 'id' },
@@ -54,6 +54,7 @@ const Employee = () => {
       console.log('Big Response Im Waiting For', employeeResp.data.employees.data);
       setResults(employeeResp.data.employees.data);
       setCurrentItems(employeeResp.data.employees.data);
+      setTotalRecord(employeeResp.data.employees.total);
     } catch (error) {
       console.log('Error in the Employee API', error);
     } finally {
@@ -94,7 +95,7 @@ const Employee = () => {
     <>
       <div className='main'>
         <div>
-          <h4>{`Total ${totalPages}`}</h4>
+          <h4>{`Total: ${totalRecord}`}</h4>
         </div>
         <form className='main-container' onSubmit={handleFilterSubmit}>
           <div className='searchContainer'>
