@@ -34,7 +34,7 @@ const Employee = () => {
     setSearchText(e.target.value);
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     !searchText && fetchData();
   }, [activePage]);
 
@@ -112,7 +112,7 @@ const Employee = () => {
           <Pagination
             className='pagination-bar'
             currentPage={activePage}
-            totalCount={totalPages}
+            totalCount={totalRecord}
             pageSize={itemPerPage}
             onPageChange={(page) => setActivePage(page)}
           />
