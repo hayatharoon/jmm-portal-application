@@ -82,7 +82,6 @@ const Employee = () => {
 
     setActivePage(1);
     setCurrentItems([...tempFilterResults]);
-    setSearchText('');
   };
 
   const closeModal = () => {
